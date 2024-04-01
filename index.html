@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Story template</title>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-rendering: optimizeLegibility;
+        }
+
+        .content {
+            max-width: 640px;
+            margin: auto;
+        }
+
+        .header {
+            padding: 3em 0;
+        }
+
+        a {
+            color: #f05349;
+        }
+
+        .footer {
+            background: #f4f4f4;
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 4em;
+            padding: 4em 0;
+        }
+
+        figure {
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        figcaption {
+            font-size: 0.8em;
+            text-align: center;
+            margin-top: 0.5em;
+            color: #666;
+        }
+
+        h1 {
+            font-family: 'Lora', Georgia, serif;
+            font-weight: bold;
+            font-size: 3em;
+            line-height: 1.1;
+        }
+
+        .subhead {
+            font-family: 'Lora', Georgia, serif;
+        }
+
+        iframe,
+        img,
+        video {
+            max-width: 100%;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        ul {
+            margin: 0;
+            padding-bottom: 1em;
+            line-height: 1.6;
+        }
+
+        iframe {
+            padding-bottom: 1.2em;
+        }
+
+        .full-width figure {
+            text-align: center;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            background: #fff880;
+        }
+
+        /* margin on mobile */
+        @media (max-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+
+            .content {
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+            }
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            width: 90vw;
+            gap: 2em;
+            margin: auto;
+            /* margin: 20px; */
+            /* align itself to the centre of the view port */
+
+        }
+
+        .column-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 650px) {
+            .row-container {
+                flex-direction: column;
+            }
+
+            .scrolly {
+                flex-direction: column;
+            }
+        }
+
+        #bigfoot1 {
+            max-width: 640px;
+        }
+
+        .scrolly {
+            display: flex;
+            flex-direction: row;
+            width: 90vw;
+            align-items: flex-start;
+            margin: auto;
+        }
+
+        .scroller {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .with-image-bg {
+            position: relative;
+            background-size: cover;
+            margin-bottom: 2em;
+
+            /* Center everything inside */
+            min-height: 70svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* White text with a shadow */
+            color: white;
+            text-shadow: 0px 0px 30px black,
+                0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .with-image-bg {
+            background-image: url('bigfoot-banner.webp');
+        }
+    </style>
+
+    <link href="scrolly-styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+</head>
+
+<body>
+    <div class="header with-image-bg">
+        <div class="content">
+            <h1>What do we know about Bigfoot?</h1>
+            <p class="subhead">From over 4,000 reported sightings</p>
+            <div class="byline">
+                <p>By <a href="https://dlaiu.github.io">Darryl Laiu</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="header">
+      <h1>What do we know about Bigfoot?</h1>
+      <p class="subhead">From over 4,000 reported sightings</p>
+    </div> -->
+
+    <section id="scrolly-images-1" class="scrolly-container-1 scrolly">
+        <div class="sticky-thing">
+            <img id="bigfoot1" src="bigfoot-1.png" alt="">
+        </div>
+
+        <div class="scroller">
+            <div class="step">
+                <p>This is what people generally think Bigfoot looks like (albeit, in pixel form).</p>
+            </div>
+            <div class="step">
+                <p>He is usually described as hairy, black, muscular, and between 8 to 10 ft tall.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="content">
+        <p>At least according to many of the 4,000 reports I looked through from the Bigfoot Field Researchers
+            Organization database.</p>
+
+        <p>Founded in 1996 by Matt Moneymaker (yes, that's his real name), it is a community of Bigfoot researchers, who
+            frequently go out into the wilderness to catch a glimpse of the mysterious Sasquatch.</p>
+
+        <p>Quote from Matt about starting the group</p>
+
+        <p>Quote from Matt about how big the group is now</p>
+
+        <p>According to the reports, another prominent telltale sign of a bigfoot sighting are wood knocks.</p>
+
+        <p>In the report, (HOW MANY REPORTS) reported hearing these "wood knocks"</p>
+
+        <p>Bigfoot is also indicated by either guttural growls or loud screeching howls.</p>
+
+        <p>(HOW MANY REPORTS) sightings mentioned screeching howls and growls.</p>
+
+        <p>There were also observations that were a lot less common, and not what you would expect Bigfoot to look like.
+        </p>
+
+        <section id="scrolly-images-2" class="scrolly-container">
+            <div class="sticky-thing">
+                <img src="bigfoot-4.png" id="bigfoot1" alt="">
+            </div>
+
+            <div class="steps-container">
+                <div class="step" id="step1">
+                    <p>Bigfoot has been seen with red eyes.</p>
+                </div>
+                <div class="step" id="step2">
+                    <p>brown hair</p>
+                </div>
+                <div class="step" id="step3">
+                    <p>grey hair</p>
+                </div>
+                <div class="step" id="step4">
+                    <p>blond hair</p>
+                </div>
+                <div class="step" id="step5">
+                    <p>and even white hair</p>
+                </div>
+            </div>
+        </section>
+
+        <p>Quote Matt about bigfoot population and demographics and characteristics</p>
+
+        <p>What else do we know?</p>
+
+    </div>
+
+    
+
+    <div class="row-container">
+        <div class="column-container">
+            <iframe title="" aria-label="Map" id="datawrapper-chart-vUs00" src="https://datawrapper.dwcdn.net/vUs00/2/"
+                scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="524"
+                data-external="1"></iframe>
+            <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r = 0; r < e.length; r++)if (e[r].contentWindow === a.source) { var i = a.data["datawrapper-height"][t] + "px"; e[r].style.height = i } } })) }();
+            </script>
+        </div>
+
+        <div class="column-container">
+            <p>Bigfoot tends to be sighted in Washington.</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <p>Matt explains....</p>
+
+        <p>And at least from the reports I had access to, Bigfoot tends to be heard a lot more than seen. TO CHECKKKKKK
+        </p>
+    </div>
+
+    <div class="row-container">
+        <div class="column-container">
+            <iframe title="" aria-label="Column Chart" id="datawrapper-chart-KZxIr"
+                src="https://datawrapper.dwcdn.net/KZxIr/1/" scrolling="no" frameborder="0"
+                style="width: 0; min-width: 100% !important; border: none;" height="382" data-external="1"></iframe>
+            <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r = 0; r < e.length; r++)if (e[r].contentWindow === a.source) { var i = a.data["datawrapper-height"][t] + "px"; e[r].style.height = i } } })) }();
+            </script>
+        </div>
+        <div class="column-container">
+            <p>Class A sightings are visual and Class B sightings are either at a distance of audio</p>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <p>KICKER FROM MATT</p>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="content">
+            <p>You can find the code for this template <a href="https://github.com/jsoma/page-templates/">here</a>.
+                Delete
+                these lines
+                when you use it, and don't forget to change the <code>title</code> tag!!!</p>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+            const scroller1 = scrollama()
+
+            scroller1
+                .setup({
+                    parent: document.querySelector("#scrolly-images-1"),
+                    step: ".step",
+                    offset: 0.6,
+                    //   debug: true,
+                })
+                .onStepEnter(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                    element.dispatchEvent(event)
+                })
+                .onStepExit(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepout", { detail: { direction: direction } })
+                    if (direction === "up" && element.previousElementSibling) {
+                        const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                        element.previousElementSibling.dispatchEvent(event)
+                    }
+                })
+
+            window.addEventListener("resize", scroller1.resize)
+        })()
+    </script>
+
+    <script>
+            /*************
+            
+            This is the JavaScript that makes the scrolly work 
+            
+            *************/
+
+            /* 
+            This part attaches a scroll to the element with id="scrolly-images"    
+            */
+
+            (() => {
+                const scroller = scrollama()
+
+                scroller
+                    .setup({
+                        parent: document.querySelector("#scrolly-images-2"),
+                        step: ".step",
+                        offset: 0.6,
+                        //   debug: true,
+                    })
+                    .onStepEnter(function ({ element, index, direction }) {
+                        const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                        element.dispatchEvent(event)
+                    })
+                    .onStepExit(function ({ element, index, direction }) {
+                        const event = new CustomEvent("stepout", { detail: { direction: direction } })
+                        if (direction === "up" && element.previousElementSibling) {
+                            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                            element.previousElementSibling.dispatchEvent(event)
+                        }
+                    })
+
+                window.addEventListener("resize", scroller.resize)
+            })()
+
+        /*
+        This part sets up your actions. In this case, it's changing the image in the scrolly container.
+        */
+        d3.select("#step1").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bigfoot-4.png")
+        })
+
+        d3.select("#step2").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bigfoot-7.png")
+        })
+
+        d3.select("#step3").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bigfoot-5.png")
+        })
+
+        d3.select("#step4").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bigfoot-3.png")
+        })
+
+        d3.select("#step5").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "bigfoot-8.png")
+        })
+    </script>
+
+    <style>
+        /* Change this to adjust the padding between steps */
+        .step {
+            margin-bottom: 70vh;
+        }
+    </style>
+
+</body>
+
+</html>
